@@ -1,0 +1,7 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#FAEDF1"/>
+  <circle cx="400" cy="356" r="154" fill="#F4B8C7"/>
+  <path d="M242 676C282 568 518 568 558 676V768H242V676Z" fill="#C95F82"/>
+  <text x="400" y="458" text-anchor="middle" font-family="Georgia, serif" font-size="92" font-weight="700" fill="white">LS</text>
+  <text x="400" y="830" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#251A1D">LS Fashion Closet</text>
+</svg>

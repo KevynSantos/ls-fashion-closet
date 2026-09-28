@@ -1,0 +1,30 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: ls-fashion-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ls_fashion_closet
+      MYSQL_USER: ls_user
+      MYSQL_PASSWORD: ls_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: ls-fashion-phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: ls_user
+      PMA_PASSWORD: ls_password
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
