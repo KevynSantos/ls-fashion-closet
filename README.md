@@ -10,6 +10,9 @@ Loja virtual responsiva com React, Java Spring Boot, Hibernate/JPA, MySQL, phpMy
 docker compose up -d
 ```
 
+Na primeira criacao do volume Docker, o MySQL executa os scripts em `database/init`.
+Depois disso, o banco nao e recriado automaticamente.
+
 2. Abra o backend:
 
 ```bash
@@ -29,6 +32,19 @@ npm run dev
 - Loja: `http://localhost:5173`
 - API: `http://localhost:8080/api`
 - phpMyAdmin: `http://localhost:8081`
+
+## Banco de dados
+
+O Hibernate esta configurado como `validate`, entao ele nao cria, altera ou apaga tabelas automaticamente.
+Ele apenas valida se o schema existe e se esta compativel com as entidades Java.
+
+Scripts versionados:
+
+- `database/init/001_schema.sql`: cria as tabelas.
+- `database/init/002_seed_products.sql`: insere produtos iniciais apenas se ainda nao existirem.
+
+Se voce ja tiver um banco criado, rode os scripts manualmente pelo phpMyAdmin ou MySQL Workbench.
+Se estiver usando Docker pela primeira vez, eles rodam automaticamente apenas quando o volume `mysql_data` ainda nao existe.
 
 ## Acessos locais
 

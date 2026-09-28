@@ -41,6 +41,7 @@ public class StoreOrder {
     private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
+    @Column(length = 30)
     private OrderStatus status = OrderStatus.PENDING;
 
     private String mercadoPagoPreferenceId;
